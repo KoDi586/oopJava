@@ -8,13 +8,16 @@ public class Main {
     public static void task1() {
         System.out.println("\n-------First task--------\n");
 
-        Author Tolstoy = new Author("Лев", "Толстой");
-        Author Pushkin = new Author("Александр", "Пушкин");
+        Author tolstoy = new Author("Лев", "Толстой");
+        Author pushkin = new Author("Александр", "Пушкин");
 
-        Book PushkinsBook = new Book("Руслан и Л.", Pushkin, 203);
-        Book TolstoyBook = new Book("WarAndPeace", Tolstoy, 153);
+        Book pushkinsBook = new Book("Руслан и Л.", pushkin, 203);
+        Book tolstoyBook = new Book("WarAndPeace", tolstoy, 153);
 
-        TolstoyBook.setAge(154);
-        System.out.println("TolstoyBook.getAge() = " + TolstoyBook.getAge());
+        tolstoyBook.setAge(154);
+        System.out.println("TolstoyBook.getAge() = " + tolstoyBook.getAge());
+
+        System.out.println(pushkin);
+        System.out.println(pushkinsBook);
     }
 }

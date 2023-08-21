@@ -1,5 +1,7 @@
 package oopJava;
 
+import java.util.Objects;
+
 public class Book {
     private final String name;
     private final Author authorName;
@@ -15,17 +17,10 @@ public class Book {
         return name;
     }
 
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-
     public Author getAuthorName() {
         return authorName;
     }
 
-//    public void setAuthorName(Author authorName) {
-//        this.authorName = authorName;
-//    }
 
     public int getAge() {
         return age;
@@ -33,5 +28,26 @@ public class Book {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) return true;
+        if (other == null || this.getClass() != other.getClass()) return false;
+        Book book = (Book) other;
+        return age == book.age && Objects.equals(name, book.name) && Objects.equals(authorName, book.authorName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, authorName, age);
+    }
+
+    @Override
+    public String toString() {
+        return "Название: '" + name + '\'' +
+                ", автор - " + authorName.getFirstName() + " " + authorName.getLastName() +
+                ", книга была написанна " + age +
+                " лет назад.";
     }
 }
